@@ -1,0 +1,59 @@
+[data-comp="login"]{
+    .login-container{
+        background: white;
+        padding: 3rem;
+    }
+    #or_div{
+        position: relative;
+        text-transform: uppercase;
+        &::before{
+            content: '';
+            border-top: 1px solid #ddd;
+            width: 100%;
+            margin-left: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+            width: 41%;
+        }
+        &::after{
+            content: '';
+            border-top: 1px solid #ddd;
+            width: 100%;
+            margin-left: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%;
+        }
+    }
+    .social-logins-wrap{
+        padding-top: 2rem;
+        button.social-login{
+        width: 100%;
+        min-width:200px;
+        i{
+            float:left;
+        }
+            &.google{
+                background-color: #d34836;
+                color: white;
+            }
+            &.fb{
+                background: #3B5998;
+                color: white;
+            
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xs){
+    [data-comp="login"]{
+        .login-container{
+            padding-left:1.5rem;
+            padding-right:1.5rem
+        }
+    }
+}

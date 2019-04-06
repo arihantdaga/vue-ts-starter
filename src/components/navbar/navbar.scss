@@ -1,0 +1,90 @@
+#main-navbar{
+    z-index:20;
+    background: $color-2;
+    // A fix needed otherwise it gives a thin seperation between navbar and other divs
+    margin-bottom: -1px;
+    @include media-breakpoint-up(md) { 
+        &.transparent-bg{
+            background: transparent;
+        }
+    }
+    
+    .navbar-nav .nav-link{
+        color: white;
+        font-family: 'Concert One', cursive;
+        // text-transform: uppercase;
+        /* letter-spacing: 2px; */
+        // font-size: 1.1rem;
+        padding-left: 1.3rem;
+        &:hover{
+            color: #333;
+            transition: color 0.2s ease-in;
+        }
+
+    }
+    &.transparent-bg{
+        .navbar-nav .nav-link{
+            &:hover{
+                // color: $color-2;
+            }
+        }
+    }
+    #userDropdownNav{
+        // box-shadow: 2px 2px 0px 2px #aaa;
+        background-color:white;
+    }
+    #userDropdown{
+        .userName{
+            display: inline-block;
+            max-width: 60px;
+            overflow: hidden;
+            vertical-align: top;
+            text-overflow: ellipsis;
+        }
+        .dropdown-item{
+            // padding-left:0.7rem;
+            // padding-right:4rem;
+            // padding-top:0.4rem;
+            // padding-bott
+            padding: 0.4rem 4rem 0.4rem 0.7rem;
+            &:active{
+                background-color:$color-2;
+            }
+            cursor: pointer;
+        }
+        .dropdown-menu{
+            font-family: 'Concert One', cursive;
+            border-top:0px none;
+            margin-top: -1px;
+            margin-right: -1px;
+            padding-top: 1rem;
+        }
+        &:hover, &:focus{
+            .dropdown-toggle{
+                box-shadow:none;
+                border-radius:3px 3px 0px 0px;
+            }
+            .dropdown-menu{
+                display:block;
+                border-radius: 3px 0px 3px 3px;
+                border-color: rgba(0,0,0,0.1);
+                // box-shadow: 2px 2px 0px 2px rgba(0,0,0,0.2);
+
+
+            }
+            #userDropDownNav{
+                border-radius: 3px 3px 0px 0px;
+            }
+
+        }
+        
+    }
+    .navbar-nav .nav-item.active > .nav-link{
+        color: #333;
+    }
+    &.shrinked{
+        height:0px;
+        padding:0px;
+        overflow: hidden;
+    }
+}

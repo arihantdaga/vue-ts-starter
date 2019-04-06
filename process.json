@@ -1,0 +1,32 @@
+{
+    "apps": [
+      {
+        "name": "opend-front-new",
+        "watch": false,
+        "script": "server/index.js",
+        "ignore_watch": ["node_modules", "upload", "uploads", "logs"],
+        "error_file": "logs/openback_error.log",
+        "out_file": "logs/openback_out.log",
+
+        "env_production": {
+          "ENVIRONMENT": "production",
+          "NODE_ENV": "production",
+          "PORT": "4070",
+          "API_HOST": "https://api.theopendiaries.com"
+        },
+        "env_test": {
+          "ENVIRONMENT": "test",
+          "NODE_ENV": "test",
+          "PORT": "4060",
+          "API_HOST": "https://stagingapi.theopendiaries.com"
+        },
+        "env_dev": {
+          "ENVIRONMENT": "dev",
+          "NODE_ENV": "devlopement",
+          "PORT": "3002",
+          "API_HOST": "http://localhost:4050"
+      }
+      
+      }
+    ]
+}

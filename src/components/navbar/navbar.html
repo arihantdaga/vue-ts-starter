@@ -1,0 +1,160 @@
+<nav class="navbar navbar-expand-md " id="main-navbar">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" @click="showNavbar=!showNavbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div> -->
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      @click="showNavbar=!showNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      aria-controls="navbar"
+    >
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <i class="fi flaticon-menu-options text-white"></i>
+    </button>
+    <router-link class="navbar-brand text-hide" to="/">
+      My App
+    </router-link>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <collapse id="navbar" class="navbar-collapse" v-model="showNavbar">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li v-for="link in links" v-bind:class="{'active' : $route.path == link.path}" v-if="link && link.path" class="nav-item">
+          <router-link v-bind:to="link.path" class="nav-link">{{link.name}}</router-link>
+        </li> -->
+        <li
+          v-bind:class="{'active' : $route.path == '/read-public-diaries'}"
+          class="nav-item"
+        >
+          <router-link v-bind:to="'/read-public-diaries'" class="nav-link">
+            <i class="fi flaticon-opened-book-with-bookmark mr-1"></i>
+            Public Diaries
+          </router-link>
+        </li>
+
+        <li
+          v-bind:class="{'active' : $route.path == '/my-diary/paper'}"
+          class="nav-item d-block d-lg-none"
+          v-if="loginService.user.authenticated"
+        >
+          <router-link
+            v-bind:to="'/my-diary/paper'"
+            v-if="loginService.user.authenticated"
+            class="nav-link"
+          >
+            <i class="fi flaticon-quill-drawing-a-line mr-2"></i> Write
+          </router-link>
+        </li>
+        <li
+          v-bind:class="{'active' : $route.path == '/my-diary'}"
+          class="nav-item d-block d-lg-none"
+          v-if="loginService.user.authenticated"
+        >
+          <router-link
+            v-bind:to="'/my-diary'"
+            v-if="loginService.user.authenticated"
+            class="nav-link"
+          >
+            <i class="fi flaticon-open-book-top-view mr-2"></i> My Diary
+          </router-link>
+        </li>
+        <li
+          v-bind:class="{'active' : $route.path == '/my-account'}"
+          class="nav-item d-block d-lg-none"
+          v-if="loginService.user.authenticated"
+        >
+          <router-link
+            v-bind:to="'/my-account'"
+            v-if="loginService.user.authenticated"
+            class="nav-link"
+          >
+            <i class="fi flaticon-people mr-2"></i> My Account
+          </router-link>
+        </li>
+
+        <li
+          class="nav-item d-block d-lg-none"
+          v-if="loginService.user.authenticated"
+        >
+          <router-link v-bind:to="'/login'" class="nav-link ">
+            <span v-on:click="logout()">
+              <i class="fi flaticon-logout-1 mr-2"></i> Logout</span
+            >
+          </router-link>
+        </li>
+
+        <li>
+          <router-link
+            v-bind:to="'/login'"
+            v-if="!loginService.user.authenticated"
+            class="btn my-2 my-sm-0 ml-3 action-btn btn-dark-cust "
+            ><i class="fi flaticon-multimedia mr-1"></i>Login</router-link
+          >
+        </li>
+
+        <li
+          class="nav-item dropdown d-none d-lg-block d-xl-block"
+          id="userDropdown"
+          v-if="loginService.user.authenticated"
+        >
+          <router-link
+            v-bind:to="'#'"
+            class="nav-link dropdown-toggle btn primary-color-text ml-md-4"
+            id="userDropdownNav"
+          >
+            <i class="fi flaticon-people mr-2 "> </i>
+            <div class="userName">
+              {{
+                loginService.user.data.name || loginService.user.data.email
+                  | capitalize
+              }}
+            </div>
+          </router-link>
+          <div class="dropdown-menu dropdown-menu-right">
+            <router-link
+              v-bind:to="'/my-diary/paper'"
+              v-if="loginService.user.authenticated"
+              class="dropdown-item"
+            >
+              <i class="fi flaticon-quill-drawing-a-line mr-2"></i> Write
+            </router-link>
+
+            <router-link
+              v-bind:to="'/my-diary'"
+              v-if="loginService.user.authenticated"
+              class="dropdown-item"
+            >
+              <i class="fi flaticon-open-book-top-view mr-2"></i> My Diary
+            </router-link>
+            <router-link
+              v-bind:to="'/my-account'"
+              v-if="loginService.user.authenticated"
+              class="dropdown-item"
+            >
+              <i class="fi flaticon-people mr-2"></i> My Account
+            </router-link>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item " v-on:click="logout()">
+              <span> <i class="fi flaticon-logout-1 mr-2"></i> Logout</span>
+            </div>
+          </div>
+        </li>
+
+        <li class=""></li>
+      </ul>
+      <!-- <ul class="navbar-nav ml-auto">
+        
+      </ul> -->
+    </collapse>
+  </div>
+</nav>

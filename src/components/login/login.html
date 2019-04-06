@@ -1,0 +1,59 @@
+<div data-comp="login" class="content container">
+        <vue-headful
+        :title="title || 'My App'"
+        :description="description || ''"
+        />
+    <div class="row mb-5">
+            <div class="col-lg-5 col-md-8 mr-auto ml-auto">
+                    <div class="login-container">
+                    <h2 class="mb-4 concert-one">Log In</h2>
+                    <div class="alert alert-danger" v-if="error">
+                        {{ error }}
+                    </div>
+                    <div class="form-group">
+                        <input
+                        type="text"
+                        class="form-control handlee"
+                        placeholder="Email"
+                        v-model="user_creds.email"
+                        @keyup="fieldKeyupEvent"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input
+                        type="password"
+                        class="form-control handlee"
+                        placeholder="Password"
+                        v-model="user_creds.password"
+                        @keyup="fieldKeyupEvent"
+                        >
+                    </div>
+                    <button class="btn action-btn btn-light-cust btn-block mt-4 loader-button" @click="submit()" :disabled="loggingIn"> <span :class="{'invisible':loggingIn}">Login </span> <custom-loader class="btn-loader" widthClass="15 " colorClass="grey" v-if="loggingIn"> </custom-loader> </button>
+        <!-- 
+                    <div id="or_div">
+                        <span>Or</span>
+                    </div> -->
+                    
+                    <div class="social-logins-wrap mt-5">
+                            <button class="btn social-login fb mb-3" :disabled="loggingIn" @click="fbLogin">
+                                    <i class="fi flaticon-facebook-logo"></i> Login with facebook
+                            </button>
+                            <!-- <button class="btn social-login google ml-auto" disabled="true">
+                                    <i class="fi flaticon-google-plus-symbol"></i> Login with google
+                            </button> -->
+                        <!-- <button class="btn btn-block social-login fb">Login with Facebook</button>
+                        <button class="btn btn-block social-login-btn google">Login with Google</button> -->
+                    </div>
+        
+                    <div class="footer text-center mt-3">
+                        <span class="handlee">Haven't joined yet ? </span>
+                        <router-link v-bind:to="'/signup'" class="clr-action handlee"> Create Account </router-link>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <router-link :to="'/forgot-password'" class="handlee clr-action"> Forgot Password ? </router-link>
+                    </div>
+        
+                </div>
+                </div>
+    </div> 
+</div>

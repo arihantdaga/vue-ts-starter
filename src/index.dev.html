@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> <%= title %> </title>
+  <meta name="description" content="<%= description %>"/>
+  <meta name="keywords" content="My App, Theopendiaries, Open Diary, Online Diary, Online journal, Journal, share your diary, Opensource Humans, Digital Diary, Mobile Diary, Laptop Diary, Cloud Diary"/>
+  <meta property="og:image" content="https://theopendiaries.com/assets/img/smallicon_facebook_w_1440.png"/>
+  <meta property="og:image:width" content="1440"/>
+  <meta property="og:image:height" content="756"/>
+  <meta property="og:description" content='<%= description %> '/>
+  <meta property="og:title" content='<%= title  %>'/>
+  <link rel="dns-prefetch" href="https://static.theopendiaries.com">
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Handlee|Lekton|PT+Mono|Poiret+One|Concert+One|Gamja+Flower" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Gamja+Flower" rel="stylesheet"> -->
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1"> -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css"> -->
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Abel|Alegreya|Cookie|Cutive+Mono|Great+Vibes|Handlee|Indie+Flower|Lekton|Nothing+You+Could+Do|PT+Mono|Poiret+One|Pompiere|Reenie+Beanie|Shadows+Into+Light|Tangerine" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Handlee|Lekton|PT+Mono|Poiret+One|Concert+One" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Boogaloo|Concert+One|Oswald|VT323" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet"> -->
+  <base href="/" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114685836-1"></script> -->
+
+  <style>
+  .default-loader .custom-loader{
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 3rem;
+        max-height:100%;
+        margin-top:100px;
+      }
+.default-loader .custom-loader:before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+.default-loader .circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.default-loader .path {
+stroke-dasharray: 1, 200;
+stroke-dashoffset: 0;
+stroke-linecap: round;
+}
+.default-loader .path.prim{
+animation: dash 1.5s ease-in-out infinite, color_prim 2s ease-in-out infinite;
+}
+.default-loader .path.grey{
+animation: dash 1.5s ease-in-out infinite, color_grey 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes dash {
+0% {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+}
+50% {
+  stroke-dasharray: 89, 200;
+  stroke-dashoffset: -35px;
+}
+100% {
+  stroke-dasharray: 89, 200;
+  stroke-dashoffset: -124px;
+}
+}
+
+@keyframes color_prim {
+0% ,50%,100%{
+  stroke: #e91e63 ;
+}
+}
+
+@keyframes color_grey {
+0% ,50%,100%{
+  stroke: #ddd;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div id="app-main">
+    <navbar :inverted="false" ></navbar>
+    <!-- <transition name="router-anim" enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutDown"> -->
+
+      <router-view :key="$route.fullPath"> 
+        <div class="default-loader">
+          <div class="custom-loader" class="s2">
+              <svg class="circular" viewBox="25 25 50 50">
+              <circle class="path prim" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10" />
+              </svg>
+          </div>
+        </div>
+      </router-view>
+    <!-- </transition> -->
+    
+  </div>
+<script type="text/javascript">
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : "186469365452747",
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.12'
+      });
+
+
+      
+    };
+    
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+<!-- Web Components Polyfill -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.13/webcomponents-lite.js"></script>
+<script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
+<script type="text/javascript" src="/plugins/pramukh/js/pramukhime.js"></script>
+<script type="text/javascript" src="/plugins/pramukh/js/pramukhindic.js"></script>
+<script type="text/javascript" src="/plugins/pramukh/js/pramukhindic-i18n.js"></script>
+</body>
+
+</html>

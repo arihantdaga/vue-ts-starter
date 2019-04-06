@@ -1,0 +1,69 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 22/04/2018 12:00
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-link:before { content: "\f100"; }
+.flaticon-list:before { content: "\f101"; }
+.flaticon-more-1:before { content: "\f102"; }
+.flaticon-more-2:before { content: "\f103"; }
+.flaticon-open-magazine:before { content: "\f104"; }
+.flaticon-more:before { content: "\f105"; }
+.flaticon-more-button-interface-symbol-of-three-horizontal-aligned-dots:before { content: "\f106"; }
+.flaticon-paint-palette:before { content: "\f107"; }
+.flaticon-paint-board-and-brush:before { content: "\f108"; }
+.flaticon-left-arrow:before { content: "\f109"; }
+.flaticon-right-arrow:before { content: "\f10a"; }
+.flaticon-menu-options:before { content: "\f10b"; }
+.flaticon-book-open-blank-pages:before { content: "\f10c"; }
+.flaticon-close:before { content: "\f10d"; }
+.flaticon-share:before { content: "\f10e"; }
+.flaticon-delete-button:before { content: "\f10f"; }
+.flaticon-edit-document:before { content: "\f110"; }
+.flaticon-people-1:before { content: "\f111"; }
+.flaticon-people:before { content: "\f112"; }
+.flaticon-interlock:before { content: "\f113"; }
+.flaticon-open-book-top-view:before { content: "\f114"; }
+.flaticon-view:before { content: "\f115"; }
+.flaticon-facebook-logo:before { content: "\f116"; }
+.flaticon-logout-1:before { content: "\f117"; }
+.flaticon-google-plus-symbol:before { content: "\f118"; }
+.flaticon-logout:before { content: "\f119"; }
+.flaticon-multimedia:before { content: "\f11a"; }
+.flaticon-tick:before { content: "\f11b"; }
+.flaticon-inkwell:before { content: "\f11c"; }
+.flaticon-letter-quill:before { content: "\f11d"; }
+.flaticon-quill-drawing-a-line:before { content: "\f11e"; }
+.flaticon-search:before { content: "\f11f"; }
+.flaticon-zen:before { content: "\f120"; }
+.flaticon-zen-stones:before { content: "\f121"; }
+.flaticon-background:before { content: "\f122"; }
+.flaticon-fonts-hand-drawn-symbol-outline:before { content: "\f123"; }
+.flaticon-check:before { content: "\f124"; }
+.flaticon-opened-book-with-bookmark:before { content: "\f125"; }
